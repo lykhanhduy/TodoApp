@@ -1,0 +1,10 @@
+<app-add (myClick) = "addNewTask($event);" (myUpdate) = "updateNewTask($event)"></app-add>
+<h3>Todo</h3>
+<ul id="incomplete-tasks" *ngFor="let task of tasks">
+  <li *ngIf="!task.completed"><input type="checkbox" (change)="doComplete(task, $event)"><label>{{ task.title }}</label><input type="text"><button class="edit" (click)="update(task);">Edit</button><button class="delete" (click)="delete(task._id)">Delete</button></li>
+</ul>
+
+<h3>Completed</h3>
+<ul id="completed-tasks" *ngFor="let task of tasks">
+  <li *ngIf="task.completed"><input type="checkbox" (change)="doComplete(task, $event)" checked><label>{{ task.title }}</label><input type="text"><button class="edit" (click)="update(task);">Edit</button><button class="delete" (click)="delete(task._id)">Delete</button></li>
+</ul>

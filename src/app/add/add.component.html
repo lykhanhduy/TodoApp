@@ -1,0 +1,5 @@
+<form (submit)="addTask(formAddTask);" #formAddTask="ngForm">
+    <label for="new-task">Add Item</label><input id="new-task" type="text" placeholder="title" [(ngModel)]="title" name="title" style="margin-bottom:10px"
+    ><input id="new-task" type="text" placeholder="time"  [(ngModel)]="time" name="time"><button *ngIf="isEdit == false" style="margin-top:35px" (click) = "addTaskForParent(formAddTask);">Add</button>
+                                                                                         <button *ngIf="isEdit == true" style="margin-top:35px" (click) = "saveTaskForParent(formAddTask);">Save</button>
+</form>
